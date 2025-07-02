@@ -8,13 +8,17 @@ Dataset available [here](https://www.kaggle.com/datasets/afumetto/3dprinter?sele
 
 # Motivation
 
-By predicting performance before printing, we can be equipped with "what-if" insights before a single print runs. Inverting those models then enables automatic selection of settings to hit target performance, cutting down on trial-and-error, material waste, and overall time-to-market (if applicable).
+By predicting performance before printing, we can be equipped with "what-if" insights before a single print runs. Inverting those models then enables automatic selection of settings to hit target performance, cutting down on trial-and-error, material waste, and overall time-to-market.
 
 ***
 
 # Exploratory Data Analysis Conclusions
 
-Overall, our three targets exhibit distinct distributional shapes. Both **surface roughness and elongation** are **positively skewed**, while **tensile strength** is **essentially symmetric**, indicating different underlying process variability. The two key categorical factors **material** (PLA vs. ABS) and **infill pattern** (grid vs. honeycomb), are **evenly represented**, simplifying comparisons. Correlation analysis shows that roughness is driven most strongly by **layer height (r $\approx$ +0.80)**, tensile strength by **wall thickness (r $\approx$ +0.40)**, and elongation again by **layer height (r $\approx$ +0.51)**, with the **thermal settings (nozzle, bed, fan) largely redundant**. Finally, **PLA yields markedly better performance than ABS** ($\approx$25 % smoother, 29 % stronger, 45 % more ductile), and **honeycomb infill** provides modest additional gains over grid.
+<p align="center">
+  <img src="results/correlation_matrix.png"  width="50%" />
+</p>
+
+Overall, our three targets exhibit distinct distributional shapes. Both **surface roughness and elongation** are **positively skewed**, while **tensile strength** is **essentially symmetric**, indicating different underlying process variability. The two key categorical factors **material** (PLA vs. ABS) and **infill pattern** (grid vs. honeycomb), are **evenly represented**, simplifying comparisons. Correlation analysis shows that roughness is driven most strongly by **layer height (r &approx; +0.80)**, tensile strength by **wall thickness (r &approx; +0.40)**, and elongation again by **layer height (r &approx; +0.51)**, with the **thermal settings (nozzle, bed, fan) largely redundant**. Finally, **PLA yields markedly better performance than ABS** (&approx;25 % smoother, 29 % stronger, 45 % more ductile), and **honeycomb infill** provides modest additional gains over grid.
 
 ***
 
